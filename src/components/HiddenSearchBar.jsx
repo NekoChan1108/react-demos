@@ -17,18 +17,18 @@ const HiddenSearchBar = () => {
     }
     const onDivClick = (e) => {
         console.log(e.target.className)
-        if (e.target.className === "search-div") {
+        if (e.target.className === "search-div"&&e.target.className!=="search-input") {
             setInput(false)
             setBackgroundColor("white")
         }
     }
     return (
-        <div className={"search-div"} onClick={onDivClick}>
+        <section className={"search-div"} onClick={onDivClick}>
             {
-                input ? <input type={"text"} placeholder={"Search..."}/> :
-                    <FaSearch onClick={onIconClick} color={"black"}/>
+                input ? <input type={"text"} placeholder={"Search..."} className={"search-input"}/> :
+                    <FaSearch onClick={onIconClick} color={"black"} className={"search-icon"}/>
             }
-        </div>
+        </section>
     );
 };
 
